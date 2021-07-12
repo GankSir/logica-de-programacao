@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+<script>
+
+	function pulaLinha() {
+			document.write("<br>");
+	}
+
+	function mostra(frase) {
+			document.write(frase);
+			pulaLinha();
+	}
+
+	var quantidadecarbono1 = parseInt(prompt("Quantidade de carbono substância 1"));
+	var quantidadecarbono2 = parseInt(prompt("Quantidade de carbono substância 2"));
+
+	quantidadecarbono2 = quantidadecarbono2 + 2;
+
+	if(quantidadecarbono1 == quantidadecarbono2) {
+		
+		mostra("Acho que são substância parecidas");
+	
+	} else { 
+        
+        mostra("São substâncias bem diferentes");
+
+	}
+</script>
