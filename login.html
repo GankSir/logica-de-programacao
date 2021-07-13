@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<script>
+	
+	var loginCadastrado = "alura";
+	var senhaCadastrada = "alura321"
+
+	var tentativasLimite = 3;
+	var tentativas = 0;
+
+  //tentativas neste momento é : 0
+  //enquanto
+  while (tentativas < tentativasLimite) {
+
+    var loginInformado = prompt("Informe seu login");
+    var senhaInformada = prompt("informe sua senha");
+    if(loginInformado == loginCadastrado && senhaInformada == senhaCadastrada){
+        alert("Seja bem vindo ao sistema");
+        tentativas = tentativasLimite
+    }else {
+        alert("Senha ou login invalido. tente novamente")
+    }
+    tentativas = tentativas + 1
+}
+</script>

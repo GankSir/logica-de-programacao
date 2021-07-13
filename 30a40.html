@@ -1,0 +1,62 @@
+<meta charset="UTF-8">
+<script>
+
+	function pulaLinha() {
+
+			document.write("<br>");
+	}
+
+	function mostra(frase) {
+
+			document.write(frase);
+			pulaLinha();
+	}
+
+	var valorAtual = 30;
+	var valorFinal = 40;
+
+	// valorAtual neste momento é: 38
+    // a variável vouMostrar é: true
+	
+	while (valorAtual <= valorFinal) {
+
+		var vouMostrar = true;
+
+		if (valorAtual == 33) {
+			vouMostrar = false
+		}
+
+		if (valorAtual == 37) {
+			vouMostrar = false
+		}
+
+		if (vouMostrar == true) {
+			console.log('O número atual é: ' + valorAtual)
+		}
+
+		valorAtual = valorAtual + 1;
+
+
+	}
+
+	//var valorAtual = 30;
+	//var valorFinal = 40;
+
+	// valorAtual neste momento é: 38
+    // a variável vouMostrar é: true
+    // || isso significa ou
+    // && isso significa e
+	
+//	while (valorAtual <= valorFinal) {
+
+		//if (valorAtual != 33 || valorAtual != 37) {
+			//console.log('O número atual é: ' + valorAtual)
+	//	}
+
+		//valorAtual = valorAtual + 1;
+
+
+//	}
+	
+	mostra("FIM");
+</script>
