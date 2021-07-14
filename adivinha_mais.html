@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+<!--abre uma caixa de texto-->
+<input/>
+<!--cria um botão-->
+<button>Compare com o meu segredo</button>
+
+<script>
+					//array Ele permite que uma variável possua vários valores
+					//0,1,2,3
+				var segredos = [5,7,10,2,3];
+				//pega a tag html e joga na variavel criada em js para trabalhar com ela
+				var input = document.querySelector("input");
+				input.focus();
+
+			function verifica() {
+
+					var achou = false;
+
+			//instrucao de repeticao				//lenght retorna a quantidades de elementos que ele tem	
+			for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+				//pega o valor do input
+				if(input.value == segredos[posicao]) {
+
+					alert("Você ACERTOU	!");
+					achou = true;
+					break;
+				}
+			}
+
+			if(achou == false) {
+				alert("Você ERROU !!!");
+			}
+
+			input.value = "";
+			input.focus();
+		}
+
+		var button = document.querySelector("button");
+     //no seu clicar
+     button.onclick = verifica;
+
+
+ </script>
