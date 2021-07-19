@@ -1,0 +1,87 @@
+<!-- esquadro.html -->
+
+<canvas width="600" height="400"></canvas>
+<script>
+//Cor do Canvas
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgrey';
+    pincel.fillRect(0, 0, 600, 400);
+
+// Centro do canvas = 300,200
+    pincel.fillStyle = 'black';
+    pincel.fillRect(0, 200, 600, 1);
+    pincel.fillRect(300,0,1,400);
+
+//Esquadro do instrutor
+    pincel.fillStyle="black";
+    pincel.beginPath();
+    pincel.moveTo(50, 50);
+    pincel.lineTo(50, 400);
+    pincel.lineTo(400, 400);
+    pincel.fill();
+
+    pincel.fillStyle="lightgrey";
+    pincel.beginPath();
+    pincel.moveTo(100, 175);
+    pincel.lineTo(100, 350);
+    pincel.lineTo(275, 350);
+    pincel.fill();
+//====================================================================================
+function desenhaEsquadro(xa, ya, xc, yc,cor) {
+    //a implementacao fica com vc :)
+//Deltas de variação
+var dx=(xc-xa); var dy=(yc-ya);
+
+if ((dx>=0)&&(dy>0)){xb=xc;yb=ya;}//Quadrante 1, ângulo <45 graus, triângulo fecha para baixo
+if ((dx<=0)&&(dy>0)){xb=xc;yb=ya;}//Quadr 2,âng.>45 graus,tria. fecha esq
+if ((dx<=0)&&(dy<0)){xb=xc;yb=ya;}//Quadr 3,âng.<45 graus,tria. fecha acima
+if ((dx>=0)&&(dy<0)){xb=xc;yb=ya;}//Quadr 4,âng.>45 graus,tria. fecha esquerda
+
+//Pré-ajuste dos pontos para centrar no canvas antes de plotar
+xa=300+xa;  ya=200-ya;  xc=300+xc;  yc=200-yc;  xb=xb+300;  yb=200-yb;
+
+/* //Melhorias conforme a variação angular.  O fechamento do triângulo tenderá a fechar
+   //no eixo que estiver mais próximo - ainda vou terminar
+if ((dx>0)&&(dy>0)&&(dx>=dy)){xb=xc;yb=ya;} //Quadrante 1, ângulo <45 graus, triângulo para baixo
+if ((dx>0)&&(dy>0)&&(dx<dy)){xb=xa;yb=dy;}  //Quadrante 1, ângulo >45 graus, triângulo para esquerda
+if ((dx<0)&&(dy>0)&&((Math.abs(dx))<(Math.abs(dy)))){xb=xa;yb=dy;}//Quadr 2,âng.>45 graus,tria.esq
+if ((dx<0)&&(dy>0)&&((Math.abs(dx))>=(Math.abs(dy)))){xb=dx;yb=ya;}//Quadr 2,âng.<45 graus,tria.baixo
+if ((dx<0)&&(dy<0)&&((Math.abs(dx))>=(Math.abs(dy)))){xb=dx;yb=ya;}//Quadr 3,âng.<45 graus,tria.acima
+if ((dx<0)&&(dy<0)&&((Math.abs(dx))<(Math.abs(dy)))){xb=xa;yb=dy;}//Quadr 3,âng.>45 graus,tria.direita
+if ((dx>0)&&(dy<0)&&((Math.abs(dx))<(Math.abs(dy)))){xb=xa;yb=dy;}//Quadr 4,âng.>45 graus,tria.esquerda
+if ((dx>0)&&(dy<0)&&((Math.abs(dx))>=(Math.abs(dy)))){xb=dx;yb=ya;}//Quadr 4,âng.<45 graus,tria.acima
+*/
+
+
+//var tela = document.querySelector('canvas');
+  //  var pincel = tela.getContext('2d');
+
+    pincel.fillStyle=cor;
+    pincel.beginPath();
+    pincel.moveTo(xa, ya);
+    pincel.lineTo(xb, yb);
+    pincel.lineTo(xc, yc);
+    pincel.fill();
+/*
+    pincel.fillStyle="white";
+    pincel.beginPath();
+    pincel.moveTo(100, 175);
+    pincel.lineTo(100, 350);
+    pincel.lineTo(275, 350);
+    pincel.fill();
+*/
+}
+
+//desenhaEsquadro(xa, ya, xc, yc, cor);
+desenhaEsquadro(50,50,150,150,"red");//Quadrante 1, preenche no eixo x
+desenhaEsquadro(70,60,140,130,"lightgrey");//Quadrante 1, preenche no eixo x
+
+desenhaEsquadro(20,-20,120,-120,"blue");//Quadrante 4,  preenche no eixo x
+desenhaEsquadro(0,0,-50,60,"green");//Quadrante 2,  preenche no eixo x
+
+desenhaEsquadro(0,0,-150,-190,"orange");//Quadrante 3,  preenche no eixo x
+desenhaEsquadro(-20,-10,-140,-155,"lightgrey");//Quadrante 3,  preenche no eixo x
+
+
+</script>
