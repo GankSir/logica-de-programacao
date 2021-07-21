@@ -20,8 +20,9 @@
         pincel.clearRect(0, 0, 600, 400);
     }
 
-    var x = 20;
-    
+    // o importante é que seja declarado fora da função atualizaTela.
+    var x = 20; 
+
     function atualizaTela() {
 
         limpaTela();
@@ -30,6 +31,7 @@
 
     }
 
+    // veja que não há mais o ()
     setInterval(atualizaTela, 10);
 
 </script>
